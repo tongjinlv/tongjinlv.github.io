@@ -1,5 +1,6 @@
 @echo off
 chdir /d "%~dp0"
+python replace_images.py
 git config --global core.quotepath true
 git status
 set /p commit_msg="please input commit message:"
