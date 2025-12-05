@@ -4,7 +4,8 @@ setlocal enabledelayedexpansion
 
 echo 正在合并所有目录内容...
 echo.
-
+cd /d "%~dp0"
+echo 当前目录：%cd%
 :: 设置当前目录为主目录
 set "main_dir=."
 echo 当前目录：%cd%
@@ -48,6 +49,8 @@ if %count% gtr 0 (
 
 echo.
 echo 执行Python脚本处理图片...
+cd /d "%~dp0"
+echo 当前目录：%cd%
 python replace_images.py
 if errorlevel 1 (
     echo Python脚本执行失败！
